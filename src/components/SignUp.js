@@ -16,9 +16,14 @@ export default function SignUp() {
 
 
     return (
-        <div className='bg-slate-300 shadow-lg p-5 rounded-lg'>
+        <div className='grid grid-cols-12'>
+            <div className='col-span-3'></div>
+            <div className='col-span-6'>
+            <div className='flex items-center justify-center'>
+            <div className='bg-slate-300 shadow-lg p-5 rounded-lg'>
             <h1 className='font-bold'>Sign Up</h1>
-            <form onSubmit={form.onSubmit((values) => console.log(values))}>
+
+                <form onSubmit={form.onSubmit((values) => console.log(values))}>
                 <TextInput
                         withAsterisk
                         label="First Name"
@@ -67,6 +72,16 @@ export default function SignUp() {
                 </div>
               
             </form>
+                </div>
+            
         </div>
+
+
+            </div>
+            <div className='col-span-3'></div>
+           
+
+        </div>
+       
     )
 }

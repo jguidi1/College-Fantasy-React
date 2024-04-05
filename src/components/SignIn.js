@@ -16,7 +16,10 @@ export default function SignIn() {
 
 
     return (
-        <div className='bg-slate-300 shadow-lg p-5 rounded-lg'>
+        <div className='grid grid-cols-12'>
+            <div className='col-span-3'></div>
+            <div className='col-span-6'>
+            <div className='bg-slate-300 shadow-lg p-5 rounded-lg'>
             <h1 className='font-bold'>Sign In</h1>
             <form onSubmit={form.onSubmit((values) => console.log(values))}>
                 <TextInput
@@ -54,5 +57,9 @@ export default function SignIn() {
               
             </form>
         </div>
+            </div>
+            <div className='col-span-3'></div>
+        </div>
+      
     )
 }

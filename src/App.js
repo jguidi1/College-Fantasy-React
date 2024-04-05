@@ -5,42 +5,32 @@ import { Button , Checkbox } from '@mantine/core';
 import '@mantine/core/styles.css';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './components/Home';
 
 function App() {
   return (
     <div className='bg-slate-100' style={{minHeight: "100vh"}}>
-    <Nav/>
-    <div className='grid grid-cols-12'>
-      <div className='col-span-3 md:col-span-3'></div>
-      <div className='col-span-3 md:col-span-6'>
-          <SignUp/>
-          {/* <Card content={
-            <div>
-              <h1>Sign In</h1>
-              <div className='flex flex-col'>
-                <input type='text' placeholder='Email'/>
-                <input type='password' placeholder='Password'/>
-                <Button variant="filled" color="rgba(0, 0, 0, 1)">Button</Button>
-                <Checkbox
-                  defaultChecked
-                  label="Remember me?"/>
+ 
+      <BrowserRouter>
+      <Nav/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/sign-in" element={<SignIn/>}/>
+        <Route path="/sign-up" element={<SignUp/>}/>
+          {/* <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} /> */}
+  
+      </Routes>
+    </BrowserRouter>
 
-              </div>
-              <h5>New to Top 25 Showdown? <button>Sign Up</button></h5>
-            </div>}/> */}
-           
-      </div>
-      <div className='col-span-3 md:col-span-3'></div>
-    </div>
+  
 
     </div>
   );
 }
 
 export default App;
+
