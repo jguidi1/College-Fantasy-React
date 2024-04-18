@@ -1,8 +1,11 @@
 import { TextInput, PasswordInput, Checkbox, Button, Group, Box } from '@mantine/core';
 import { useForm } from "@mantine/form";
-
+import axios from 'axios';
+import { useState } from 'react';
 
 export default function SignIn() {
+    const [example, setExample] = useState("example")
+
     const form = useForm({
         initialValues: {
           email: '',
@@ -14,12 +17,27 @@ export default function SignIn() {
         },
       });
 
+      const signIn = async () => {
+        var response = await axios.get("http://localhost:8000/")
+
+        if (response.status !== 200) {
+            setExample("not a successful fetch")
+            return
+        }
+
+        setExample(response.data.message)
+        console.log(response.data)
+      }
+
 
     return (
         <div className='grid grid-cols-12'>
             <div className='col-span-3'></div>
             <div className='col-span-6'>
             <div className='bg-slate-300 shadow-lg p-5 rounded-lg'>
+
+            <h1 className='font-bold text-lg'>{example}</h1>
+
             <h1 className='font-bold'>Sign In</h1>
             <form onSubmit={form.onSubmit((values) => console.log(values))}>
                 <TextInput
@@ -38,7 +56,7 @@ export default function SignIn() {
                 <div className='grid grid-cols-12'>
                     <div className='col-span-12'>
                         <div className='flex justify-center pt-5'>
-                            <Button type="submit" variant="filled" color="rgba(0, 0, 0, 1)">Sign In</Button>
+                            <Button type="submit" variant="filled" color="rgba(0, 0, 0, 1)" onClick={() => signIn()}>Sign In</Button>
                         </div>    
                     </div>
                     <div className='col-span-12'>
