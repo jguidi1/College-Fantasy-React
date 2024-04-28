@@ -7,6 +7,7 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
+import TeamSelection from './components/TeamSelection';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/sign-in" element={<SignIn/>}/>
         <Route path="/sign-up" element={<SignUp/>}/>
+        <Route path="/select-team" element={<TeamSelection/>}/>
+        <Route path="/select-team/:id" element={<null/>} />
+
           {/* <Route index element={<Home />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
