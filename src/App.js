@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import TeamSelection from './components/TeamSelection';
 import LeagueStanding from './components/LeagueStanding';
+import MyTeam from './components/MyTeam';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/sign-up" element={<SignUp/>}/>
         <Route path="/select-team" element={<TeamSelection/>}/>
         <Route path="/select-team/:id" element={<null/>} />
+        <Route path="/my-team/:id" element={<MyTeam/>} />
         <Route path="/league-standing/:id" element={<LeagueStanding/>} />
           {/* <Route index element={<Home />} />
           <Route path="blogs" element={<Blogs />} />
