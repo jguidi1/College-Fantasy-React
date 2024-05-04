@@ -24,7 +24,7 @@ function App() {
         <Route path="/select-team" element={<TeamSelection/>}/>
         <Route path="/select-team/:id" element={<null/>} />
         <Route path="/my-team/:id" element={<MyTeam/>} />
-        <Route path="/league-standing/:id" element={<LeagueStanding/>} />
+        <Route path="/league-standings/:id" element={<LeagueStanding/>} />
           {/* <Route index element={<Home />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
