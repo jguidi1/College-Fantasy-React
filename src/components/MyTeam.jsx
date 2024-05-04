@@ -18,7 +18,7 @@ export default function MyTeam() {
         { id: 2, athlete: "Hey 2" },
         { id: 3, athlete: "Hey 3" },
         { id: 4, athlete: "Hey 4" },
-        { id: 5, athlete: "Hey 5" },
+        { id: 5, athlete: null },
         { id: 6, athlete: "Hey 6" },
     ]);
 
