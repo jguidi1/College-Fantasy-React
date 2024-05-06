@@ -244,42 +244,88 @@ const teams = [
 // Card component
 const Card = ({ team }) => {
     return (
-      <div style={{ marginBottom: '20px', marginLeft: '40px', marginRight: '40px', border: '1px solid black', cursor: 'pointer', display: 'flex' }} className='rounded-lg'>
-        <div style={{ flex: '1', padding: '10px' }}>
-          <div style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '5px' }}>
-            {team.teamName}
-          </div>
-          <div style={{ marginBottom: '5px' }}>
-            {team.score}
-          </div>
-          <div style={{ marginBottom: '5px', fontSize: '14px' }}>
-            ({team.current_placement} out of {team.placement_out_of})
-          </div>
-          <div style={{ fontSize: '14px' }}>
-            {team.league} | {team.name}
-          </div>
-        </div>
-        <div style={{ flex: '1', padding: '10px', borderLeft: '1px solid black' }}>
-          <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '5px' }}>
-            Last Matchup:
-          </div>
-          <div style={{ marginBottom: '5px' }}>
-            Opponent: {team.last_matchup.opponent_team}
-          </div>
-          <div style={{ marginBottom: '5px' }}>
-            Opponent Score: {team.last_matchup.opponent_score}
-          </div>
-          <div style={{ marginBottom: '5px' }}>
-            You: {team.teamName}
-          </div>
+      // <div style={{ marginBottom: '20px', marginLeft: '40px', marginRight: '40px', border: '1px solid black', cursor: 'pointer', display: 'flex' }} className='rounded-lg'>
+      //   <div style={{ flex: '1', padding: '10px' }}>
+      //     <div style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '5px' }}>
+      //       {team.teamName}
+      //     </div>
+      //     <div style={{ marginBottom: '5px' }}>
+      //       {team.score}
+      //     </div>
+      //     <div style={{ marginBottom: '5px', fontSize: '14px' }}>
+      //       ({team.current_placement} out of {team.placement_out_of})
+      //     </div>
+      //     <div style={{ fontSize: '14px' }}>
+      //       {team.league} | {team.name}
+      //     </div>
+      //   </div>
+      //   <div style={{ flex: '1', padding: '10px', borderLeft: '1px solid black' }}>
+      //     <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '5px' }}>
+      //       Last Matchup:
+      //     </div>
+      //     <div style={{ marginBottom: '5px' }}>
+      //       Opponent: {team.last_matchup.opponent_team}
+      //     </div>
+      //     <div style={{ marginBottom: '5px' }}>
+      //       Opponent Score: {team.last_matchup.opponent_score}
+      //     </div>
+      //     <div style={{ marginBottom: '5px' }}>
+      //       You: {team.teamName}
+      //     </div>
+      //     <div>
+      //       Your Score: {team.last_matchup.ally_score}
+      //     </div>
+      //   </div>
+      //   <div style={{ flex: '1', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      //     <img src={team.imageUrl} alt={team.name} className="relative inline-block h-12 w-12 !rounded-full object-cover object-center" style={{ maxWidth: '100%' }} />
+      //   </div>
+      // </div>
           <div>
-            Your Score: {team.last_matchup.ally_score}
+            <div className="bg-white rounded-md m-5 p-5">
+                <div className="grid grid-cols-12">
+                    <div className="col-span-6">
+                      <div className='flex justify-center items-center h-full pe-20'>
+                    <div style={{ flex: '1', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <img src={team.imageUrl} alt={team.name} className="relative inline-block h-12 w-12 !rounded-full object-cover object-center" style={{ maxWidth: '100%' }} />
+                    </div>
+                        <div className="flex justify-center items-center h-full">
+                            <span>
+                                <h1 className='gap-x-5 flex items-center'><div className='font-bold text-2xl'>{team.teamName}</div> <div>{team.record} ({team.current_placement} out of {team.placement_out_of})</div></h1>
+                                <p><Link to={"/league-standings/2"} className='cursor-pointer text-blue-400 font-bold'>{team.league}</Link>  | {team.name}</p>
+                            </span>
+                           
+                        </div>
+                    </div>
+                    </div>
+                    <div className="col-span-6">
+                        <div className="text-center">
+                            <h1 className='p-2 font-bold'>LAST MATCHUP</h1>
+                            <div className='border border-black rounded-lg p-2'>
+                                <div className='grid grid-cols-12 p-2'>
+                                    <div className='col-span-6'>
+                                        <h1 className='text-left'>{team.teamName}</h1>
+                                    </div>
+                                    <div className='col-span-6'>
+                                        <p className='text-right text-green-700'>{team.last_matchup.ally_score}</p>
+                                    </div>
+                                    <div className='col-span-6'>
+                                        <h1 className='text-left'>{team.last_matchup.opponent_team}</h1>
+                                    </div>
+                                    <div className='col-span-6'>
+                                        <p className='text-right text-red-700'>{team.last_matchup.opponent_score}</p>
+                                    </div>
+                             
+                                 
+                                </div>
+                            
+                            </div>
+                          
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
-        </div>
-        <div style={{ flex: '1', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <img src={team.imageUrl} alt={team.name} className="relative inline-block h-12 w-12 !rounded-full object-cover object-center" style={{ maxWidth: '100%' }} />
-        </div>
-      </div>
     );
   };
   

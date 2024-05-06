@@ -1,8 +1,11 @@
 import { TextInput, PasswordInput, Checkbox, Button, Group, Box } from '@mantine/core';
 import { useForm } from "@mantine/form";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function SignUp() {
+    const nav = useNavigate()
+
     const form = useForm({
         initialValues: {
           email: '',
@@ -67,7 +70,7 @@ export default function SignUp() {
                         </div>
                     </div>
                     <div className='col-span-12 text-center'>
-                     <h5 className='pt-5'>Already have an account?<Button>Sign In</Button></h5>
+                     <h5 className='pt-5'>Already have an account?<Button onClick={() => {nav("/sign-in")}}>Sign In</Button></h5>
                     </div>
                 </div>
               
