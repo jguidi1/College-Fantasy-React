@@ -1,9 +1,37 @@
 import Logo from '../images/Logo.png'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@mantine/core';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function Nav() {
     const nav = useNavigate()
+    const [loggedIn, setLoggedIn] = useState(false)
+    const [user, setUser] = useState(null)
+
+    useEffect(() => {
+        verifyToken()
+
+
+        const verifyToken = async () => {
+            var token = localStorage.getItem("token")
+
+            if (!token) {
+                return
+            }
+
+            var response = await axios.get("http://localhost:8000/verify?token="+token)
+
+            if (response.code != 200) {
+                setLoggedIn(false)
+                return
+            }
+
+            console.log(response.data)
+        }
+
+
+    }, [])
 
     return (<>
         <div className='grid grid-cols-12 p-5'>

@@ -20,7 +20,7 @@ export default function SignIn() {
       });
 
       const signIn = async () => {
-        var response = await axios.get("http://localhost:8000/")
+        var response = await axios.post("http://localhost:8000/sign-in", form.values)
 
         if (response.status !== 200) {
             setExample("not a successful fetch")
@@ -28,6 +28,8 @@ export default function SignIn() {
         }
 
         setExample(response.data.message)
+        localStorage.setItem("token", response.data.token)
+
         console.log(response.data)
       }
 
