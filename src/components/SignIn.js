@@ -2,9 +2,11 @@ import { TextInput, PasswordInput, Checkbox, Button, Group, Box } from '@mantine
 import { useForm } from "@mantine/form";
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function SignIn() {
     const [example, setExample] = useState("example")
+    const nav = useNavigate()
 
     const form = useForm({
         initialValues: {
@@ -69,7 +71,7 @@ export default function SignIn() {
                         </div>
                     </div>
                     <div className='col-span-12 text-center'>
-                     <h5 className='pt-5'>New to Top 25 Showdown? <Button>Sign Up</Button></h5>
+                     <h5 className='pt-5'>New to Top 25 Showdown? <Button onClick={() => {nav("/sign-up")}}>Sign Up</Button></h5>
                     </div>
                 </div>
               
