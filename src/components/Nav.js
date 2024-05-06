@@ -10,28 +10,45 @@ export default function Nav() {
     const [user, setUser] = useState(null)
 
     useEffect(() => {
-        verifyToken()
-
-
         const verifyToken = async () => {
             var token = localStorage.getItem("token")
 
             if (!token) {
-                return
-            }
-
-            var response = await axios.get("http://localhost:8000/verify?token="+token)
-
-            if (response.code != 200) {
                 setLoggedIn(false)
                 return
             }
 
-            console.log(response.data)
+            try {
+                var response = await axios.get("http://localhost:8000/verify?token="+token)
+                console.log(response.status)
+
+                if (response.status !== 200) {
+                    setLoggedIn(false)
+                    return
+                }
+          
+                setLoggedIn(true)
+                setUser(response.data.user_data)
+                return
+            } catch {
+                setLoggedIn(false)
+            }
+            
+            setLoggedIn(true)
         }
 
-
+         verifyToken()
     }, [])
+
+    
+
+    function logout() {
+        localStorage.removeItem("token")
+        setLoggedIn(false)
+        nav("/")
+    }
+
+    useEffect(() => {console.log(loggedIn)})
 
     return (<>
         <div className='grid grid-cols-12 p-5'>
@@ -40,13 +57,28 @@ export default function Nav() {
                     <img src={Logo} alt="Logo" className='' />
                 </div>
    
-
-            <div className='col-span-6 md:col-span-9'>
+            {
+                loggedIn ? 
+                <>
+                <div className='col-span-6 md:col-span-9'>
+                <div className='flex gap-x-5 h-full justify-end'>
+                    <Button variant="filled" color="rgba(0, 0, 0, 1)" onClick={() => nav("/scoring")}>Scoring</Button>
+                    <Button variant="filled" color="rgba(0, 0, 0, 1)" onClick={() => nav("/select-team")}>My Teams</Button>
+                    <Button variant="filled" color="rgba(0, 0, 0, 1)" onClick={() => {logout()}}>Log Out</Button>
+                </div>
+                </div>
+                </>
+                :
+                <>
+                <div className='col-span-6 md:col-span-9'>
                 <div className='flex gap-x-5 h-full justify-end'>
                     <Button variant="filled" color="rgba(0, 0, 0, 1)" onClick={() => nav("/sign-in")}>Sign In</Button>
                     <Button variant="filled" color="rgba(0, 0, 0, 1)" onClick={() => nav("/sign-up")}>Sign Up</Button>
                 </div>
-            </div>
+                </div>
+            </>
+            }
+         
         </div>
      
 

@@ -30,7 +30,8 @@ export default function SignIn() {
         setExample(response.data.message)
         localStorage.setItem("token", response.data.token)
 
-        console.log(response.data)
+        nav("/")
+
       }
 
 
