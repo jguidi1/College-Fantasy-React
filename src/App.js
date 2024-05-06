@@ -10,6 +10,7 @@ import Home from './components/Home';
 import TeamSelection from './components/TeamSelection';
 import LeagueStanding from './components/LeagueStanding';
 import MyTeam from './components/MyTeam';
+import Scoring from './components/Scoring';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/sign-in" element={<SignIn/>}/>
         <Route path="/sign-up" element={<SignUp/>}/>
+        <Route path="/scoring" element={<Scoring/>}/>
+
         <Route path="/select-team" element={<TeamSelection/>}/>
         <Route path="/select-team/:id" element={<null/>} />
         <Route path="/my-team/:id" element={<MyTeam/>} />
