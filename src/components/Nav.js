@@ -4,9 +4,8 @@ import { Button } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function Nav() {
+export default function Nav({loggedIn, setLoggedIn}) {
     const nav = useNavigate()
-    const [loggedIn, setLoggedIn] = useState(false)
     const [user, setUser] = useState(null)
 
     useEffect(() => {
@@ -19,7 +18,7 @@ export default function Nav() {
             }
 
             try {
-                var response = await axios.get("http://localhost:8000/verify?token="+token)
+                var response = await axios.get("http://localhost:8000/verify?token=" + token)
                 console.log(response.status)
 
                 if (response.status !== 200) {

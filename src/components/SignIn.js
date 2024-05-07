@@ -3,8 +3,10 @@ import { useForm } from "@mantine/form";
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function SignIn() {
+export default function SignIn({setLoggedIn}) {
     const [example, setExample] = useState("example")
     const nav = useNavigate()
 
@@ -20,23 +22,34 @@ export default function SignIn() {
       });
 
       const signIn = async () => {
-        var response = await axios.post("http://localhost:8000/sign-in", form.values)
+        try {
+            var response = await axios.post("http://localhost:8000/sign-in", form.values)
 
-        if (response.status !== 200) {
-            setExample("not a successful fetch")
-            return
+            if (response.status !== 200) {
+                setExample("not a successful fetch")
+                return
+            }
+    
+            setExample(response.data.message)
+            localStorage.setItem("token", response.data.token)
+            toast.success("Logging you in")
+            setTimeout(() => {
+                nav("/")
+                setLoggedIn(true)
+            }, 2500)
+
+        } catch {
+            toast.error("Unable to log you in")
         }
-
-        setExample(response.data.message)
-        localStorage.setItem("token", response.data.token)
-
-        nav("/")
+    
 
       }
 
 
     return (
         <div className='grid grid-cols-12'>
+
+            <ToastContainer />
             <div className='col-span-3'></div>
             <div className='col-span-6'>
             <div className='bg-slate-300 shadow-lg p-5 rounded-lg'>

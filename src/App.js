@@ -11,16 +11,19 @@ import TeamSelection from './components/TeamSelection';
 import LeagueStanding from './components/LeagueStanding';
 import MyTeam from './components/MyTeam';
 import Scoring from './components/Scoring';
+import { useState } from 'react';
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false)
+
   return (
     <div className='bg-slate-100' style={{minHeight: "100vh"}}>
  
       <BrowserRouter>
-      <Nav/>
+      <Nav loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/sign-in" element={<SignIn/>}/>
+        <Route path="/sign-in" element={<SignIn setLoggedIn={setLoggedIn}/>}/>
         <Route path="/sign-up" element={<SignUp/>}/>
         <Route path="/scoring" element={<Scoring/>}/>
 
