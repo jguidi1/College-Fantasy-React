@@ -7,50 +7,80 @@ import { useMantineTheme } from '@mantine/core';
 // import { data } from './makeData';
 
 const data = [
-    {
-        rank: 0,
-        teamName: "Hello World",
-        wins: 5,
-        losses: 0,
-        ties: 1
-    },
-    {
-        rank: 0,
-        teamName: "Hello World",
-        wins: 5,
-        losses: 0,
-        ties: 1
-    },
-    {
-        rank: 0,
-        teamName: "Hello World",
-        wins: 5,
-        losses: 0,
-        ties: 1
-    },
-    {
-        rank: 0,
-        teamName: "Hello World",
-        wins: 5,
-        losses: 0,
-        ties: 1
-    },
-    {
-        rank: 0,
-        teamName: "Hello World",
-        wins: 5,
-        losses: 0,
-        ties: 1
-    },
-    {
-        rank: 0,
-        teamName: "Hello World Hello World Hello World",
-        wins: 5,
-        losses: 0,
-        ties: 1
-    },
+  {
+      rank: 1,
+      teamName: "Joe Bukets",
+      wins: 8,
+      losses: 2,
+      ties: 0
+  },
+  {
+      rank: 2,
+      teamName: "Team C",
+      wins: 6,
+      losses: 2,
+      ties: 2
+  },
+  {
+      rank: 3,
+      teamName: "Team F",
+      wins: 5,
+      losses: 2,
+      ties: 3
+  },
+  {
+      rank: 4,
+      teamName: "Team D",
+      wins: 4,
+      losses: 3,
+      ties: 3
+  },
+  
+  {
+      rank: 5,
+      teamName: "Team J",
+      wins: 4,
+      losses: 2,
+      ties: 4
+  },
+  {
+      rank: 6,
+      teamName: "Team A",
+      wins: 3,
+      losses: 3,
+      ties: 4
+  },
+  {
+      rank: 7,
+      teamName: "Team I",
+      wins: 3,
+      losses: 3,
+      ties: 4
+  },
+  {
+      rank: 8,
+      teamName: "Team B",
+      wins: 2,
+      losses: 4,
+      ties: 4
+  },
+  {
+      rank: 9,
+      teamName: "Team G",
+      wins: 2,
+      losses: 6,
+      ties: 2
+  },
+  {
+      rank: 10,
+      teamName: "Team E",
+      wins: 1,
+      losses: 5,
+      ties: 4
+  }
+];
 
-]
+
 
 export const LeagueStanding = () => {
   const { colorScheme } = useMantineTheme();
