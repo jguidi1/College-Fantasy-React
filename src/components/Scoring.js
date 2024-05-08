@@ -12,9 +12,6 @@ export default function Scoring() {
                 transition={{ ease: "easeOut", duration: 2 }}
                 className="flex justify-center items-center"
             >
-            
-            
-            
 
             <img src={HomeIcon} alt="" style={{width: '100%'}}/>
            
