@@ -1,4 +1,4 @@
-# AirMeetings
+# Top 25 Showdown
   - Joe Guidi (Ithaca College '24)
   - Vattana Chan (Ithaca College '24)
 
