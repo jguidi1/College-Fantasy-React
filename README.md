@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# AirMeetings
+  - Joe Guidi (Ithaca College '24)
+  - Vattana Chan (Ithaca College '24)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# About 
+React web-app that allows users to play college fantasy football
 
-## Available Scripts
+# Technology Used
+  - Python3
+    - FastAPI
+  - SQLite
+  - React
+  
+# Additional Information
+This was a senior project for our last semester at Ithaca College with professor Doug Turnbull. The purpose of the project was to create a web-app from scratch using Flask based on an original idea. The project features several routes, forms, and templates complete with CSS styles. All user and space data is kept in a SQLite database which gets updated in the background of the app. The OpenStreetMaps API was used to display the location of a certain space on its page.
 
-In the project directory, you can run:
+ - A link to the final project report: https://docs.google.com/document/d/1ph-A__bOYyQPkpJ0RWXRG0enNJra54iDeiZSp2GegTw/edit?usp=sharing 
+ - A link to a demo of the site: 
 
-### `npm start`
+# Future Work
+This is detailed in the final project report but will be repeated here:
+ - Incorporate scheduling for “my teams” and leagues
+ - Implement league wide start of season draft
+ - Allow users to change scoring type
+ - Different interfaces and actions for designated “commissioner” accounts
+ - Ability to flag and remove score from players outside of the top 25
+ - Live data updates from API 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# Contact
+For any additional questions please email: jguidi@ithaca.edu or pchan@ithaca.edu
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
